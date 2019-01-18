@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="486.0" prefWidth="1008.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.HomeController">
+   <children>
+      <AnchorPane fx:id="bailOutPane" layoutX="202.0" layoutY="36.0" prefHeight="454.0" prefWidth="804.0" style="-fx-background-color: #82bb32; -fx-border-color: black;">
+         <children>
+            <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bail Out">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Separator layoutX="4.0" layoutY="32.0" prefWidth="200.0" />
+            <AnchorPane fx:id="offencePpane1" layoutX="14.0" layoutY="139.0" prefHeight="278.0" prefWidth="668.0">
+               <children>
+                  <TextField fx:id="Firstname1" layoutX="14.0" layoutY="24.0" prefHeight="25.0" prefWidth="271.0" promptText="Firstname" />
+                  <TextField fx:id="Lastname1" layoutX="313.0" layoutY="24.0" prefHeight="25.0" prefWidth="317.0" promptText="Lastname" />
+                  <TextField fx:id="Vehicle1" layoutX="14.0" layoutY="66.0" prefHeight="25.0" prefWidth="271.0" promptText="Vehicle No" />
+                  <TextField fx:id="DriverNo1" layoutX="313.0" layoutY="66.0" prefHeight="25.0" prefWidth="317.0" promptText="Driver Licensed No" />
+                  <JFXRadioButton fx:id="male1" layoutX="14.0" layoutY="109.0" text="Male">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="gender1" />
+                     </toggleGroup>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="female1" layoutX="119.0" layoutY="109.0" text="Female" toggleGroup="$gender1" />
+                  <TextField fx:id="offence1" layoutX="14.0" layoutY="142.0" prefHeight="25.0" prefWidth="271.0" promptText="Offence" />
+                  <TextField fx:id="penalty1" layoutX="313.0" layoutY="106.0" prefHeight="25.0" prefWidth="317.0" promptText="Penalty" />
+                  <TextField fx:id="offenceCode1" layoutX="15.0" layoutY="182.0" prefHeight="25.0" prefWidth="271.0" promptText="Offence Code" />
+                  <TextField fx:id="reporter1" layoutX="313.0" layoutY="146.0" prefHeight="25.0" prefWidth="317.0" promptText="Reporter" />
+                  <JFXButton layoutX="228.0" layoutY="223.0" onAction="#BailOut" prefHeight="31.0" prefWidth="166.0" style="-fx-background-color: green;" text="Bail Out" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXDatePicker fx:id="date1" layoutX="313.0" layoutY="182.0" prefHeight="25.0" prefWidth="317.0" promptText="Today's Date" />
+               </children>
+            </AnchorPane>
+            <TextField fx:id="editText" layoutX="14.0" layoutY="63.0" prefHeight="25.0" prefWidth="405.0" promptText="Enter Offence ID" />
+            <JFXButton fx:id="searchBailOut" layoutX="445.0" layoutY="63.0" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: yellow; -fx-background-radius: 7px;" text="Search">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ViewOffencePane" layoutX="202.0" layoutY="36.0" prefHeight="454.0" prefWidth="804.0" style="-fx-background-color: #82bb32; -fx-border-color: black;">
+         <children>
+            <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Offence">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Separator layoutX="4.0" layoutY="32.0" prefWidth="200.0" />
+            <TableView fx:id="table" layoutX="5.0" layoutY="52.0" prefHeight="400.0" prefWidth="796.0">
+               <columns>
+                  <TableColumn fx:id="Tfirstname" prefWidth="121.0" text="FIRSTNAME" />
+                  <TableColumn fx:id="Tlastname" prefWidth="113.0" text="LASTNAME" />
+                  <TableColumn fx:id="Tgender" minWidth="1.0" prefWidth="75.0" text="GENDER" />
+                  <TableColumn fx:id="Toffence" prefWidth="83.0" text="OFFENCE" />
+                  <TableColumn fx:id="Treporter" prefWidth="119.0" text="REPORTER" />
+                  <TableColumn fx:id="Tpenalty" prefWidth="318.0" text="PENALTY" />
+                  <TableColumn fx:id="offID" prefWidth="110.0" text="ID" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="addOffenceGanGan" layoutX="202.0" layoutY="36.0" prefHeight="454.0" prefWidth="804.0" style="-fx-background-color: #82bb32; -fx-border-color: black;">
+         <children>
+            <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Offence">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Separator layoutX="4.0" layoutY="32.0" prefWidth="200.0" />
+            <JFXComboBox fx:id="combo" layoutX="21.0" layoutY="91.0" prefHeight="25.0" prefWidth="518.0" promptText="-Select Offence-" />
+            <AnchorPane fx:id="offencePpane" layoutX="14.0" layoutY="139.0" prefHeight="278.0" prefWidth="668.0">
+               <children>
+                  <TextField fx:id="Firstname" layoutX="14.0" layoutY="24.0" prefHeight="25.0" prefWidth="271.0" promptText="Firstname" />
+                  <TextField fx:id="Lastname" layoutX="313.0" layoutY="24.0" prefHeight="25.0" prefWidth="317.0" promptText="Lastname" />
+                  <TextField fx:id="Vehicle" layoutX="14.0" layoutY="66.0" prefHeight="25.0" prefWidth="271.0" promptText="Vehicle No" />
+                  <TextField fx:id="DriverNo" layoutX="313.0" layoutY="66.0" prefHeight="25.0" prefWidth="317.0" promptText="Driver Licensed No" />
+                  <JFXRadioButton fx:id="male" layoutX="14.0" layoutY="109.0" text="Male">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="gender" />
+                     </toggleGroup>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="female" layoutX="119.0" layoutY="109.0" text="Female" toggleGroup="$gender" />
+                  <TextField fx:id="offence" layoutX="14.0" layoutY="142.0" prefHeight="25.0" prefWidth="271.0" promptText="Offence" />
+                  <TextField fx:id="penalty" layoutX="313.0" layoutY="142.0" prefHeight="25.0" prefWidth="317.0" promptText="Penalty" />
+                  <TextField fx:id="offenceCode" layoutX="15.0" layoutY="182.0" prefHeight="25.0" prefWidth="271.0" promptText="Offence Code" />
+                  <TextField fx:id="reporter" editable="false" layoutX="313.0" layoutY="182.0" prefHeight="25.0" prefWidth="317.0" promptText="Reporter" />
+                  <JFXButton fx:id="submitOffenceBTN" layoutX="191.0" layoutY="223.0" onAction="#SubmitOffence" prefHeight="25.0" prefWidth="230.0" style="-fx-background-color: green;" text="Submit Offence" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXDatePicker fx:id="date" layoutX="313.0" layoutY="105.0" prefHeight="25.0" prefWidth="317.0" promptText="Today's Date" />
+               </children>
+            </AnchorPane>
+            <Text fx:id="ID" fill="WHITE" layoutX="216.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="492.0" prefWidth="199.0" style="-fx-background-color: green;">
+         <children>
+            <ImageView fitHeight="117.0" fitWidth="148.0" layoutX="24.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+            <Text fill="#fffafa" layoutX="67.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Text>
+            <JFXButton fx:id="addOffenceBTN" layoutX="1.0" layoutY="260.0" prefHeight="25.0" prefWidth="188.0" text="ADD OFFENCES" textFill="#fffefe">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="viewOffenceBTN" layoutX="5.0" layoutY="311.0" prefHeight="25.0" prefWidth="188.0" text="VIEW OFFENCES" textFill="#fffefe">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="bailOutBTN" layoutX="6.0" layoutY="361.0" prefHeight="25.0" prefWidth="188.0" text="BAIL OUT" textFill="#fffefe">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="exitBTN" layoutX="8.0" layoutY="412.0" prefHeight="25.0" prefWidth="188.0" text="EXIT" textFill="#fffefe">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <Text layoutX="61.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Navigation">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <Separator layoutX="-2.0" layoutY="234.0" prefWidth="200.0" />
+            <Separator layoutX="-3.0" layoutY="292.0" prefWidth="200.0" />
+            <Separator layoutX="-1.0" layoutY="344.0" prefWidth="200.0" />
+            <Separator layoutX="-1.0" layoutY="394.0" prefWidth="200.0" />
+            <Separator layoutX="-1.0" layoutY="448.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
